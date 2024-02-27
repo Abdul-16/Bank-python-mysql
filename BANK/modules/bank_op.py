@@ -4,7 +4,7 @@ from modules.utils import decoration
 class bank:
     @decoration
     def __init__(self, *args, **kwargs):
-        self.conn = connect.connect(host='localhost', user='root', password='abdul16bharde@gmail.com', database='bank')
+        self.conn = connect.connect(host='localhost', user='root', password='YOUR_PASSWORD', database='bank')
         print('|','WELCOME TO THE BANK APPLICATION',' |')
 
     def signUp(self, userName, password):
