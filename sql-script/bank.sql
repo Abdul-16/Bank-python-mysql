@@ -1,0 +1,14 @@
+CREATE database if not EXISTS bank;
+USE bank;
+CREATE TABLE IF NOT EXISTS users (
+    userName VARCHAR(32) PRIMARY KEY NOT NULL UNIQUE,
+    userPassword CHARACTER(64) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS balance (
+    balanceId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    userName VARCHAR(32) NOT NULL UNIQUE,
+    balance FLOAT NOT NULL DEFAULT 0,
+    FOREIGN KEY (userName)
+        REFERENCES users (userName)
+);
